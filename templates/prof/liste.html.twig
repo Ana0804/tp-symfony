@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <ul class="nav">
+        <li class="nav-item">
+        <a class="nav-link" href="/accueil"><i class="bi bi-arrow-counterclockwise"></i> Retour</a>
+        </li>
+    </ul>
+
+<div class="container">
+    <h1 class="m-4 text-center">Liste des professeurs</h1>
+    <div class="d-flex ">      
+        {% for prof in profs %}
+         <div class="card m-4 text-center d-flex justify-content-center" style="width: 18rem;">
+    <div class="card-body">
+        <h2 class="card-text">{{prof.nom}}</h2>
+        <h2 class="card-text">{{prof.prenom}}</h2>
+        <p class="card-text">{{prof.matiere.nom}}</p>
+   </div>
+</div>
+  {% endfor %}
+
+</body>

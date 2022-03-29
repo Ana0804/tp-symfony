@@ -20,14 +20,27 @@
         <a class="nav-link" href="/reglement">Règlement intérieur</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ajouter</a>
+        <a class="nav-link" href="{{ path('app_prof_liste') }}">Professeurs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_eleve_liste') }}">Elèves</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_classe_liste') }}">Classes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_matiere_liste') }}">Matières</a>
       </li>
     </ul>
 
     
     <h1 class="text-center m-3">Accueil</h1>
 
-  <div class="container text-justify">
+  
+    <div class="img text-center m-3">
+      <img src="https://media.lesechos.com/api/v1/images/view/613b5e21d286c27a423afc16/1280x720/0611678766304-web-tete.jpg" alt="..." style="height:500px; width:850px;">
+    </div>
+    <div class="container text-justify">
       <p>Etiam non urna vitae metus lobortis varius ac non nisl. Nullam auctor mi non tempus commodo. Sed venenatis nibh in eleifend convallis. Donec in erat velit. Sed sodales eu sem vel viverra. Suspendisse potenti. Sed felis urna, tincidunt sit amet dui vitae, gravida malesuada velit. Nunc eget eros mauris. Phasellus et diam non sapien feugiat accumsan in a augue. In sed dapibus tortor. Fusce efficitur vestibulum risus, ut hendrerit dolor iaculis et. In aliquet metus eget ipsum condimentum laoreet. Curabitur nec porta lacus. Maecenas enim eros, aliquet eu lectus vitae, tempus ullamcorper lorem.</p>
   </div>
 
