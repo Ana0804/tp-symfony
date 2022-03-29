@@ -12,8 +12,10 @@ class MatiereType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom')
-        ;
+            ->add('nom', TextType::class)
+            ->add('submit', SubmitType::class, [
+                'label' => 'Envoyer'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

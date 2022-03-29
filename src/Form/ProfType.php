@@ -15,12 +15,10 @@ class ProfType extends AbstractType
             ->add('nom', TextType::class)
             ->add('prenom', TextType::class)
             ->add('date_de_naissance', DateType::class)
-            ->add('matiere', EntityType::class, 
-                array(
-
-                ))
-            ->add('submit', SubmitType::class)
-        ;
+            ->add('matiere', EntityType::class,)
+            ->add('submit', SubmitType::class, [
+                'label' => 'Envoyer'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -15,8 +15,13 @@ class EleveType extends AbstractType
             ->add('nom', TextType::class)
             ->add('prenom', TextType::class)
             ->add('date_de_naissance', DateType::class)
-            ->add('classe')
-        ;
+            ->add('classe', EntityType::class, [
+                'class' => Prof::class,
+                'choice_label' => 'nom'
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Envoyer'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
