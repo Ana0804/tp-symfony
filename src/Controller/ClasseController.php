@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ClasseController extends AbstractController
 {
-    #[Route('/liste-classe', name: 'app_classe_liste')]
+    #[Route('/liste/classes', name: 'app_classe_liste')]
     public function index(ClasseRepository $rep): Response
     {
         $classes = $rep -> findAll();
@@ -21,7 +21,7 @@ class ClasseController extends AbstractController
         ]);
     }
 
-    #[Route('/ajout-classe', name: 'app_classe_ajout')]
+    #[Route('/ajout/classe', name: 'app_classe_ajout')]
     public function create(ClasseRepository $rep, Request $request) {
 
         $classe = new Classe;

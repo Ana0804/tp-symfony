@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EleveController extends AbstractController
 {
-    #[Route('/liste-eleve', name: 'app_eleve_liste')]
+    #[Route('/liste/eleves', name: 'app_eleve_liste')]
     public function index(EleveRepository $rep): Response
     {
         $eleves = $rep -> findAll();
@@ -21,7 +21,7 @@ class EleveController extends AbstractController
         ]);
     }
 
-    #[Route('/ajout-eleve', name: 'app_eleve_ajout')]
+    #[Route('/ajout/eleve', name: 'app_eleve_ajout')]
     public function create(EleveRepository $rep, Request $request) {
 
         $eleve = new Eleve;
@@ -38,5 +38,24 @@ class EleveController extends AbstractController
                 'formView' => $formulaire->createView(),
             ]);
         }
+    }
+
+    #[Route('/liste/{id}/details', name: 'app_eleve_details')]
+    public function details($id, EleveRepository $rep)
+    {
+        $eleve = $rep->find($id);
+
+        return $this->render('eleve/details.html.twig', [
+            'eleve' => $eleve,
+        ]);
+    }
+
+
+    #[Route('/eleve/{id}/supprimer', name: 'app_eleve_suppr')]
+    public function delete($id, EleveRepository $rep) {
+        $eleve = $rep->find($id);
+        $rep->remove($eleve);
+
+        return $this->redirectToRoute('app_eleve_liste');
     }
 }

@@ -23,7 +23,7 @@ class ClasseType extends AbstractType
                 'choice_label' => 'nom'
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer'
+                'label' => 'Ajouter'
             ]);
     }
 

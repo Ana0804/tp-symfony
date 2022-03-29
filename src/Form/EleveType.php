@@ -3,9 +3,14 @@
 namespace App\Form;
 
 use App\Entity\Eleve;
+use App\Entity\Classe;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class EleveType extends AbstractType
 {
@@ -16,11 +21,11 @@ class EleveType extends AbstractType
             ->add('prenom', TextType::class)
             ->add('date_de_naissance', DateType::class)
             ->add('classe', EntityType::class, [
-                'class' => Prof::class,
+                'class' => Classe::class,
                 'choice_label' => 'nom'
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer'
+                'label' => 'Ajouter'
             ]);
     }
 

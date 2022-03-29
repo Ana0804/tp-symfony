@@ -22,17 +22,24 @@
         </li>
     </ul>
 
-<div class="container">
-    <h1 class="m-4 text-center">Liste des professeurs</h1>
-    <div class="d-flex flex-wrap justify-content-center">      
-        {% for prof in profs %}
-         <div class="card m-4 text-center d-flex justify-content-center" style="width: 18rem;">
-    <div class="card-body">
-        <h2 class="card-text">{{prof.nom}}</h2>
-        <h2 class="card-text">{{prof.prenom}}</h2>
-        <p class="card-text">{{prof.matiere.nom}}</p>
-   </div>
-</div>
-  {% endfor %}
+    <div class="container">
+        <h1 class="m-4 text-center">Liste des professeurs</h1>
+        <div class="d-flex flex-wrap justify-content-center">      
+            {% for prof in profs %}
+            <div class="card m-4 text-center d-flex justify-content-center" style="width: 18rem;">
+                <div class="card-body">
+                    <h2 class="card-text">{{prof.nom}}</h2>
+                    <h2 class="card-text">{{prof.prenom}}</h2>
+                    <p class="card-text">{{prof.matiere.nom}}</p>
+                    <a href="{{ path('app_prof_suppr', {id: prof.id}) }}" class="btn btn-danger" style="width: 30px; height:30px"><i class="bi bi-trash d-flex justify-content-center"></i></a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+        <div class="btn d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="{{path('app_prof_ajout')}}" class="btn btn-info">Ajouter un professeur</a>
+        </div>
+    </div>
 
 </body>
